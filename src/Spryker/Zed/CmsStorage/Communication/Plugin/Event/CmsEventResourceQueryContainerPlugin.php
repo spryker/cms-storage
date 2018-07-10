@@ -19,7 +19,7 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
  * @method \Spryker\Zed\CmsStorage\Business\CmsStorageFacadeInterface getFacade()
  * @method \Spryker\Zed\CmsStorage\Communication\CmsStorageCommunicationFactory getFactory()
  */
-class CmsEventResourcePlugin extends AbstractPlugin implements EventResourceQueryContainerPluginInterface
+class CmsEventResourceQueryContainerPlugin extends AbstractPlugin implements EventResourceQueryContainerPluginInterface
 {
     /**
      * Specification:
