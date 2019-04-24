@@ -316,10 +316,9 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         $idCmsPage = $cmsPageEntity->getIdCmsPage();
         $cmsPageStores = $cmsPageEntity->getSpyCmsPageStores();
 
-        foreach ($localeNames as $localeName) {
-            foreach ($cmsPageStores as $cmsPageStore) {
-                $storeName = $cmsPageStore->getSpyStore()->getName();
-
+        foreach ($cmsPageStores as $cmsPageStore) {
+            $storeName = $cmsPageStore->getSpyStore()->getName();
+            foreach (Store::getInstance()->getLocalesPerStore($storeName) as $localeName) {
                 $cmsPageStorageEntity = isset($cmsPageStorageEntities[$idCmsPage][$localeName][$storeName]) ?
                     $cmsPageStorageEntities[$idCmsPage][$localeName][$storeName] :
                     new SpyCmsPageStorage();
