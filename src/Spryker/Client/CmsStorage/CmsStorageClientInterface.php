@@ -20,4 +20,20 @@ interface CmsStorageClientInterface
      * @return \Generated\Shared\Transfer\LocaleCmsPageDataTransfer
      */
     public function mapCmsPageStorageData(array $data);
+
+    /**
+     * Specification:
+     * - Finds cms page Storage records by uuids, locale and store.
+     * - Returns array of CmsPageStorageTransfer indexed by uuid.
+     *
+     * @api
+     *
+     * @param string[] $cmsPageUuids
+     * @param string $mappingType
+     * @param string $localeName
+     * @param string $storeName
+     *
+     * @return \Generated\Shared\Transfer\CmsPageStorageTransfer[]
+     */
+    public function getCmsPageStorageByUuids(array $cmsPageUuids, string $mappingType, string $localeName, string $storeName): array;
 }
