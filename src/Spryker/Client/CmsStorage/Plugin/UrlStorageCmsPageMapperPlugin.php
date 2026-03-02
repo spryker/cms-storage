@@ -68,9 +68,6 @@ class UrlStorageCmsPageMapperPlugin extends AbstractPlugin implements UrlStorage
             ->getStorageKeyBuilder(CmsStorageConstants::CMS_PAGE_RESOURCE_NAME)->generateKey($synchronizationDataTransfer);
     }
 
-    /**
-     * @return string
-     */
     protected function getStoreName(): string
     {
         return $this->getFactory()

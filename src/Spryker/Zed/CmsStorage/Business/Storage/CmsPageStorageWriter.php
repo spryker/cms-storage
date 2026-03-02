@@ -150,14 +150,6 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         }
     }
 
-    /**
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param \Orm\Zed\CmsStorage\Persistence\SpyCmsPageStorage $cmsPageStorageEntity
-     * @param string $localeName
-     * @param string|null $storeName
-     *
-     * @return void
-     */
     protected function storeDataSet(
         SpyCmsPage $cmsPageEntity,
         SpyCmsPageStorage $cmsPageStorageEntity,
@@ -255,11 +247,6 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         return (new LocaleCmsPageDataTransfer())->fromArray($expandedData);
     }
 
-    /**
-     * @param \DateTime|null $dateTime
-     *
-     * @return string|null
-     */
     protected function convertDateTimeToString(?DateTime $dateTime = null): ?string
     {
         if (!$dateTime) {
@@ -285,11 +272,6 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         }
     }
 
-    /**
-     * @param \Orm\Zed\CmsStorage\Persistence\SpyCmsPageStorage $cmsPageStorageEntity
-     *
-     * @return void
-     */
     protected function deleteStorageEntity(SpyCmsPageStorage $cmsPageStorageEntity): void
     {
         if ($cmsPageStorageEntity->isNew() || $cmsPageStorageEntity->getKey() === null) {
@@ -366,12 +348,6 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         return [$pairs, $cmsPageStorageEntities];
     }
 
-    /**
-     * @param array $cmsPageStorageEntities
-     * @param array $pairs
-     *
-     * @return array
-     */
     protected function pairRemainingCmsPageStorageEntities(array $cmsPageStorageEntities, array $pairs): array
     {
         array_walk_recursive($cmsPageStorageEntities, function (SpyCmsPageStorage $cmsPageStorageEntity) use (&$pairs) {

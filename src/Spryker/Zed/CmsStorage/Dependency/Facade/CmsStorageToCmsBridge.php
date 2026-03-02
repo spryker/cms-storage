@@ -25,11 +25,6 @@ class CmsStorageToCmsBridge implements CmsStorageToCmsInterface
         $this->cmsFacade = $cmsFacade;
     }
 
-    /**
-     * @param string $cmsPageData
-     *
-     * @return \Generated\Shared\Transfer\CmsVersionDataTransfer
-     */
     public function extractCmsVersionDataTransfer(string $cmsPageData): CmsVersionDataTransfer
     {
         return $this->cmsFacade->extractCmsVersionDataTransfer($cmsPageData);

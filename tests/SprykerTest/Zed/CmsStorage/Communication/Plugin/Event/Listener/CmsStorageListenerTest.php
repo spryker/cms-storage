@@ -50,9 +50,6 @@ class CmsStorageListenerTest extends Unit
      */
     public const NUMBER_OF_STORES = 3;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,9 +57,6 @@ class CmsStorageListenerTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageVersionStorageListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -84,9 +78,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertCmsPageStorage($beforeCount);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageStorageListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -106,9 +97,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertCmsPageStorage($beforeCount);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageStoragePublishListener(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -128,9 +116,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertCmsPageStorage($beforeCount);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageStorageUnpublishListener(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -147,9 +132,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertSame(0, SpyCmsPageStorageQuery::create()->filterByFkCmsPage(1)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageUrlStorageListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -171,9 +153,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertCmsPageStorage($beforeCount);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageUrlStoragePublishListener(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -195,9 +174,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertCmsPageStorage($beforeCount);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageUrlStorageUnpublishListener(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -216,9 +192,6 @@ class CmsStorageListenerTest extends Unit
         $this->assertSame(0, SpyCmsPageStorageQuery::create()->filterByFkCmsPage(1)->count());
     }
 
-    /**
-     * @return \Spryker\Zed\CmsStorage\Business\CmsStorageFacade
-     */
     protected function getCmsStorageFacade(): CmsStorageFacade
     {
         $factory = new CmsStorageBusinessFactory();
@@ -230,11 +203,6 @@ class CmsStorageListenerTest extends Unit
         return $facade;
     }
 
-    /**
-     * @param int $beforeCount
-     *
-     * @return void
-     */
     protected function assertCmsPageStorage(int $beforeCount): void
     {
         $count = SpyCmsPageStorageQuery::create()->count();

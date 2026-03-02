@@ -45,11 +45,6 @@ class CmsStorageMapper
         return $sitemapUrlTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\CmsStorage\Persistence\SpyCmsPageStorage $cmsPageStorageEntity
-     *
-     * @return \Generated\Shared\Transfer\SitemapUrlTransfer
-     */
     protected function mapCmsPageStorageEntityToSitemapUrlTransfer(SpyCmsPageStorage $cmsPageStorageEntity): SitemapUrlTransfer
     {
         return (new SitemapUrlTransfer())

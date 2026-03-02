@@ -31,11 +31,6 @@ class CmsPageStorageReader implements CmsPageStorageReaderInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Client\CmsStorage\Dependency\Client\CmsStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\CmsStorage\Dependency\Service\CmsStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\CmsStorage\Dependency\Service\CmsStorageToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         CmsStorageToStorageClientInterface $storageClient,
         CmsStorageToSynchronizationServiceInterface $synchronizationService,
@@ -153,13 +148,6 @@ class CmsPageStorageReader implements CmsPageStorageReaderInterface
         return $cmsPageStorageKeys;
     }
 
-    /**
-     * @param string $cmsPageReference
-     * @param string $localeName
-     * @param string $storeName
-     *
-     * @return string
-     */
     protected function generateKey(string $cmsPageReference, string $localeName, string $storeName): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

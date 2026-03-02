@@ -28,9 +28,6 @@ class CmsStoragePersistenceFactory extends AbstractPersistenceFactory
         return SpyCmsPageStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Locale\Persistence\SpyLocaleQuery
-     */
     public function getLocalePropelQuery(): SpyLocaleQuery
     {
         return $this->getProvidedDependency(CmsStorageDependencyProvider::PROPEL_QUERY_LOCALE);
@@ -44,9 +41,6 @@ class CmsStoragePersistenceFactory extends AbstractPersistenceFactory
         return $this->getProvidedDependency(CmsStorageDependencyProvider::QUERY_CONTAINER_CMS_PAGE);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsStorage\Persistence\Propel\Mapper\CmsStorageMapper
-     */
     public function createCmsStorageMapper(): CmsStorageMapper
     {
         return new CmsStorageMapper();

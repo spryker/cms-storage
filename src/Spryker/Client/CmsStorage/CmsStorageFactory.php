@@ -25,9 +25,6 @@ class CmsStorageFactory extends AbstractFactory
         return new CmsPageStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Client\CmsStorage\Reader\CmsPageStorageReaderInterface
-     */
     public function createCmsPageStorageReader(): CmsPageStorageReaderInterface
     {
         return new CmsPageStorageReader(
@@ -45,25 +42,16 @@ class CmsStorageFactory extends AbstractFactory
         return $this->getProvidedDependency(CmsStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\CmsStorage\Dependency\Client\CmsStorageToStorageClientInterface
-     */
     public function getStorageClient(): CmsStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(CmsStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\CmsStorage\Dependency\Service\CmsStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): CmsStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(CmsStorageDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Client\CmsStorage\Dependency\Client\CmsStorageToStoreClientInterface
-     */
     public function getStoreClient(): CmsStorageToStoreClientInterface
     {
         return $this->getProvidedDependency(CmsStorageDependencyProvider::CLIENT_STORE);

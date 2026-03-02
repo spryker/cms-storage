@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\LocaleTransfer;
 
 interface CmsStorageToCmsInterface
 {
-    /**
-     * @param string $cmsPageData
-     *
-     * @return \Generated\Shared\Transfer\CmsVersionDataTransfer
-     */
     public function extractCmsVersionDataTransfer(string $cmsPageData): CmsVersionDataTransfer;
 
     /**
