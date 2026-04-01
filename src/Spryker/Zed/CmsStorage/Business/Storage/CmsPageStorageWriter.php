@@ -324,7 +324,7 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         array $localeNameMap
     ): array {
         $idCmsPage = $cmsPageEntity->getIdCmsPage();
-        $cmsPageStores = $cmsPageEntity->getSpyCmsPageStores();
+        $cmsPageStores = $this->getPageStores($cmsPageEntity);
 
         foreach ($cmsPageStores as $cmsPageStore) {
             $storeName = $cmsPageStore->getSpyStore()->getName();
@@ -390,5 +390,21 @@ class CmsPageStorageWriter implements CmsPageStorageWriterInterface
         }
 
         return $storeRelations;
+    }
+
+    /**
+     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
+     *
+     * @return array<int, \Orm\Zed\Cms\Persistence\SpyCmsPageStore>
+     */
+    public function getPageStores(SpyCmsPage $cmsPageEntity): array
+    {
+        $cmsPageStores = $cmsPageEntity->getSpyCmsPageStores();
+        $result = [];
+        foreach ($cmsPageStores as $cmsPageStore) {
+            $result[$cmsPageStore->getFkStore()] = $cmsPageStore;
+        }
+
+        return $result;
     }
 }
