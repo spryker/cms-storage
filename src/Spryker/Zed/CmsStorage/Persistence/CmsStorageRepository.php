@@ -60,7 +60,6 @@ class CmsStorageRepository extends AbstractRepository implements CmsStorageRepos
             ->orderByIdCmsPageStorage()
             ->limit($limit)
             ->offset($offset);
-        $sitemapUrlTransfers = [];
         $cmsStorageMapper = $this->getFactory()->createCmsStorageMapper();
 
         do {
